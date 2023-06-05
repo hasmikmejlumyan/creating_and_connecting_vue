@@ -16,21 +16,18 @@
             <h2>Events in Action</h2>
             <button v-on:click="add(5)">Add</button>
             <button v-on:click.left="reduce(5)">Reduce</button>
-            <p v-once>Starting Counter: {{ counter }}</p>
             <p>Results: {{ counter }}</p>
 
-            <input
-                    type="text"
-                    v-on:input="setName($event, 'Hasik')"
-                    v-on:keyup.enter="confirmInput"
-            >
-<!--            <p>Your name: {{ name }}</p>-->
-            <p>Your name when I confirm: {{ confirmedName }}</p>
-
-            <form v-on:submit.prevent="submitFrom">
-                <input type="text">
-                <button>Sign up</button>
-            </form>
+<!--            <input-->
+<!--                    type="text"-->
+<!--                    v-bind:value="name"-->
+<!--                    v-on:input="setName($event)"-->
+<!--                    v-on:keyup.enter="confirmInput"-->
+<!--            >-->
+            <input type="text" v-model="name">
+            <input type="text" v-model="lastName">
+            <button v-on:click="resetInput">Reset input</button>
+            <p>Your name: {{ fullname }}</p>
         </section>
     </body>
 </html>
