@@ -15,8 +15,17 @@
         <section id="events">
             <h2>Events in Action</h2>
             <button v-on:click="add(5)">Add</button>
-            <button v-on:click="reduce(5)">Reduce</button>
+            <button v-on:click.right="reduce(5)">Reduce</button>
             <p>Results: {{ counter }}</p>
+
+            <input type="text" v-on:input="setName($event, 'Hasik')" v-on:keyup.enter="confirmInput">
+<!--            <p>Your name: {{ name }}</p>-->
+            <p>Your name when I confirm: {{ confirmedName }}</p>
+
+            <form v-on:submit.prevent="submitFrom">
+                <input type="text">
+                <button>Sign up</button>
+            </form>
         </section>
     </body>
 </html>
