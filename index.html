@@ -9,25 +9,28 @@
     </head>
     <body>
         <header>
-            <h1>Vue Events</h1>
+            <h1>Vue dynamic Styling</h1>
         </header>
 
-        <section id="events">
-            <h2>Events in Action</h2>
-            <button v-on:click="add(5)">Add</button>
-            <button v-on:click.left="reduce(5)">Reduce</button>
-            <p>Results: {{ counter }}</p>
-
-<!--            <input-->
-<!--                    type="text"-->
-<!--                    v-bind:value="name"-->
-<!--                    v-on:input="setName($event)"-->
-<!--                    v-on:keyup.enter="confirmInput"-->
-<!--            >-->
-            <input type="text" v-model="name">
-            <input type="text" v-model="lastName">
-            <button v-on:click="resetInput">Reset input</button>
-            <p>Your name: {{ fullname }}</p>
+        <section id="styling">
+            <div
+                class="demo"
+                :class="boxAClasses"
+                @click="boxSelected('A')"
+            >
+            </div>
+            <div
+                class="demo"
+                :class="{active: boxBSelected}"
+                @click="boxSelected('B')"
+            >
+            </div>
+            <div
+                class="demo"
+                :class="{active: boxCSelected}"
+                @click="boxSelected('C')"
+            >
+            </div>
         </section>
     </body>
 </html>

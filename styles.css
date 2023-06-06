@@ -1,0 +1,11 @@
+.demo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 1px dashed gray;
+}
+
+.active {
+    border-color: red;
+    background-color: salmon;
+}
