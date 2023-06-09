@@ -9,7 +9,11 @@ const app = Vue.createApp({
     methods: {
         addGoal() {
             this.goals.push(this.enteredGoalValue);
-        }
+            this.enteredGoalValue = '';
+        },
+        removeGoal(index) {
+            this.goals.splice(index, 1);
+        },
     },
 });
 
